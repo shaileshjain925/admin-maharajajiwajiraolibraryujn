@@ -1,5 +1,5 @@
 {
-    "name": "codeigniter4/framework",
+    "name": "codeigniter4/appstarter",
     "description": "The CodeIgniter framework v4",
     "license": "MIT",
     "type": "project",
@@ -13,7 +13,13 @@
         "php": "^8.1",
         "ext-intl": "*",
         "ext-mbstring": "*",
+        "codeigniter4/framework": "^4.5.1",
+        "codeigniter4/settings": "v2.2.0",
+        "firebase/php-jwt": "v6.10.1",
+        "google/auth": "v1.40.0",
+        "google/cloud-firestore": "^0.1.0",
         "laminas/laminas-escaper": "^2.13",
+        "phpoffice/phpspreadsheet": "^2.1",
         "psr/log": "^3.0"
     },
     "require-dev": {
@@ -48,9 +54,6 @@
         "ext-xdebug": "If you use CIUnitTestCase::assertHeaderEmitted()"
     },
     "autoload": {
-        "psr-4": {
-            "CodeIgniter\\": "system/"
-        },
         "exclude-from-classmap": [
             "**/Database/Migrations/**"
         ]

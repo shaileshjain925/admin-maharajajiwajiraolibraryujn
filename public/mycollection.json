@@ -1,0 +1,2090 @@
+{
+    "info": {
+        "_postman_id": "667697f82bb48",
+        "name": "HansaHandloom",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "adminApi",
+            "item": [
+                {
+                    "name": "user",
+                    "item": [
+                        {
+                            "name": "UserLogin",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/** \r\n     * {\r\n     * \"username\":\"required\",\r\n     * \"password\":\"required\"\r\n     * }\r\n     *\/\/ \r\n      {\r\n      \"username\":\"required\",\r\n      \"password\":\"required\"\r\n      }\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/user\/login",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "user",
+                                        "login"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "UserForgetPasswordOtpSend",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/** *\/\/ \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/user\/UserForgetPasswordOtpSend",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "user",
+                                        "UserForgetPasswordOtpSend"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "UserForgetPasswordUpdate",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/user\/UserForgetPasswordUpdate",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "user",
+                                        "UserForgetPasswordUpdate"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Country",
+                    "item": [
+                        {
+                            "name": "CountryGet",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/**\r\n     * {\"country_id\":\"required\"}\r\n     *\/\/\r\n      {\"country_id\":\"required\"}\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/Country\/Get",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "Country",
+                                        "Get"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "CountryList",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/**\r\n     *  {\r\n     *  \"country_id\": \"\",\r\n     *\t\"country_name\": \"\",\r\n     *\t\"alias\": \"\",\r\n     *\t\"short_name\": \"\",\r\n     *\t\"phonecode\": \"\",\r\n     *\t\"currency\": \"\",\r\n     *\t\"currency_name\": \"\",\r\n     *\t\"currency_symbol\": \"\",\r\n     *\t\"region\": \"\",\r\n     *  \"select\":\"\",\r\n     *  \"autojoin\":\"\" \/\/ \"y\",\"f\"\r\n     *  }\r\n     *\/\/\r\n       {\r\n       \"country_id\": \"\",\r\n     \t\"country_name\": \"\",\r\n     \t\"alias\": \"\",\r\n     \t\"short_name\": \"\",\r\n     \t\"phonecode\": \"\",\r\n     \t\"currency\": \"\",\r\n     \t\"currency_name\": \"\",\r\n     \t\"currency_symbol\": \"\",\r\n     \t\"region\": \"\",\r\n       \"select\":\"\",\r\n       \"autojoin\":\"\" \/\/ \"y\",\"f\"\r\n       }\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/Country\/List",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "Country",
+                                        "List"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "CountryCreate",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/**\r\n     * {\r\n     *     \"country_name\": \"required|max_length[100]\",\r\n     *     \"alias\": \"max_length[3]\",\r\n     *     \"short_name\": \"max_length[2]\",\r\n     *     \"phonecode\": \"max_length[255]\",\r\n     *     \"currency\": \"max_length[255]\",\r\n     *     \"currency_name\": \"max_length[255]\",\r\n     *     \"currency_symbol\": \"max_length[255]\",\r\n     *     \"region\": \"max_length[255]\"\r\n     * } \r\n     *\/\/\r\n      {\r\n          \"country_name\": \"required|max_length[100]\",\r\n          \"alias\": \"max_length[3]\",\r\n          \"short_name\": \"max_length[2]\",\r\n          \"phonecode\": \"max_length[255]\",\r\n          \"currency\": \"max_length[255]\",\r\n          \"currency_name\": \"max_length[255]\",\r\n          \"currency_symbol\": \"max_length[255]\",\r\n          \"region\": \"max_length[255]\"\r\n      } \r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/Country\/Create",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "Country",
+                                        "Create"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "CountryUpdate",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/**\r\n     * {\r\n     *     \"country_id\": \"required\",\r\n     *     \"country_name\": \"required|max_length[100]\",\r\n     *     \"alias\": \"max_length[3]\",\r\n     *     \"short_name\": \"max_length[2]\",\r\n     *     \"phonecode\": \"max_length[255]\",\r\n     *     \"currency\": \"max_length[255]\",\r\n     *     \"currency_name\": \"max_length[255]\",\r\n     *     \"currency_symbol\": \"max_length[255]\",\r\n     *     \"region\": \"max_length[255]\"\r\n     * } \r\n     *\/\/\r\n      {\r\n          \"country_id\": \"required\",\r\n          \"country_name\": \"required|max_length[100]\",\r\n          \"alias\": \"max_length[3]\",\r\n          \"short_name\": \"max_length[2]\",\r\n          \"phonecode\": \"max_length[255]\",\r\n          \"currency\": \"max_length[255]\",\r\n          \"currency_name\": \"max_length[255]\",\r\n          \"currency_symbol\": \"max_length[255]\",\r\n          \"region\": \"max_length[255]\"\r\n      } \r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/Country\/Update",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "Country",
+                                        "Update"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "CountryDelete",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/**\r\n     * {\"country_id\":\"required\"}\r\n     *\/\/\r\n      {\"country_id\":\"required\"}\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/Country\/Delete",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "Country",
+                                        "Delete"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "State",
+                    "item": [
+                        {
+                            "name": "StateGet",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/** \r\n     * Get a single state by ID\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a single state by ID\r\n      \r\n      @return mixed\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/State\/Get",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "State",
+                                        "Get"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "StateList",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/** \r\n     * Get a list of all states\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a list of all states\r\n      \r\n      @return mixed\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/State\/List",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "State",
+                                        "List"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "StateCreate",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/** \r\n     * Create a new state\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Create a new state\r\n      \r\n      @return mixed\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/State\/Create",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "State",
+                                        "Create"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "StateUpdate",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/** \r\n     * Update an existing state\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Update an existing state\r\n      \r\n      @return mixed\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/State\/Update",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "State",
+                                        "Update"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "StateDelete",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/** \r\n     * Delete an existing state\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Delete an existing state\r\n      \r\n      @return mixed\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/State\/Delete",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "State",
+                                        "Delete"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "City",
+                    "item": [
+                        {
+                            "name": "CityGet",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/** \r\n     * Get a single city by ID\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a single city by ID\r\n      \r\n      @return mixed\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/City\/Get",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "City",
+                                        "Get"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "CityList",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/** \r\n     * Get a list of all cities\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a list of all cities\r\n      \r\n      @return mixed\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/City\/List",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "City",
+                                        "List"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "CityCreate",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/** \r\n     * Create a new city\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Create a new city\r\n      \r\n      @return mixed\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/City\/Create",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "City",
+                                        "Create"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "CityUpdate",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/** \r\n     * Update an existing city\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Update an existing city\r\n      \r\n      @return mixed\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/City\/Update",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "City",
+                                        "Update"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "CityDelete",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/** \r\n     * Delete an existing city\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Delete an existing city\r\n      \r\n      @return mixed\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/City\/Delete",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "City",
+                                        "Delete"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Auth",
+                    "item": [
+                        {
+                            "name": "User",
+                            "item": [
+                                {
+                                    "name": "UserGet",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/User\/Get",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "User",
+                                                "Get"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "UserList",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** *\/\/ \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/User\/List",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "User",
+                                                "List"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "UserCreate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * {\"user_id\": \"permit_empty|integer\",\t\"fullname\": \"required|max_length[255]\",\t\"email\": \"required|valid_email|max_length[255]|is_unique[user.email,user_id,{user_id}]\",\t\"mobile\": \"required|max_length[15]|is_unique[user.mobile,user_id,{user_id}]\",\t\"password\": \"required|max_length[255]\",\t\"otp\": \"permit_empty|max_length[6]\",\t\"user_type\": \"required|in_list[admin,purchase,finance,order,delivery,stock]\",\t\"is_active\": \"boolean\"} \r\n     *\/\/ \r\n      {\"user_id\": \"permit_empty|integer\",\t\"fullname\": \"required|max_length[255]\",\t\"email\": \"required|valid_email|max_length[255]|is_unique[user.email,user_id,{user_id}]\",\t\"mobile\": \"required|max_length[15]|is_unique[user.mobile,user_id,{user_id}]\",\t\"password\": \"required|max_length[255]\",\t\"otp\": \"permit_empty|max_length[6]\",\t\"user_type\": \"required|in_list[admin,purchase,finance,order,delivery,stock]\",\t\"is_active\": \"boolean\"} \r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/User\/Create",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "User",
+                                                "Create"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "UserUpdate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** *\/\/ \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/User\/Update",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "User",
+                                                "Update"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "UserDelete",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** *\/\/ \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/User\/Delete",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "User",
+                                                "Delete"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "FileUpload",
+                            "item": [
+                                {
+                                    "name": "ImageUpload",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/FileUpload\/ImageUpload",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "FileUpload",
+                                                "ImageUpload"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Brand",
+                            "item": [
+                                {
+                                    "name": "BrandGet",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Get a single brand by ID\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a single brand by ID\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Brand\/Get",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Brand",
+                                                "Get"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "BrandList",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Get a list of all brands\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a list of all brands\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Brand\/List",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Brand",
+                                                "List"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "BrandCreate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Create a new brand\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Create a new brand\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Brand\/Create",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Brand",
+                                                "Create"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "BrandUpdate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Update an existing brand\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Update an existing brand\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Brand\/Update",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Brand",
+                                                "Update"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "BrandDelete",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Delete an existing brand\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Delete an existing brand\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Brand\/Delete",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Brand",
+                                                "Delete"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "CategoryType",
+                            "item": [
+                                {
+                                    "name": "CategoryTypeGet",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Get a single category type by ID\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a single category type by ID\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/CategoryType\/Get",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "CategoryType",
+                                                "Get"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "CategoryTypeList",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Get a list of all category types\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a list of all category types\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/CategoryType\/List",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "CategoryType",
+                                                "List"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "CategoryTypeCreate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Create a new category type\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Create a new category type\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/CategoryType\/Create",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "CategoryType",
+                                                "Create"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "CategoryTypeUpdate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Update an existing category type\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Update an existing category type\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/CategoryType\/Update",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "CategoryType",
+                                                "Update"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "CategoryTypeDelete",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Delete an existing category type\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Delete an existing category type\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/CategoryType\/Delete",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "CategoryType",
+                                                "Delete"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Category",
+                            "item": [
+                                {
+                                    "name": "CategoryGet",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Get a single category by ID\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a single category by ID\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Category\/Get",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Category",
+                                                "Get"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "CategoryList",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Get a list of all categories\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a list of all categories\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Category\/List",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Category",
+                                                "List"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "CategoryCreate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Create a new category\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Create a new category\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Category\/Create",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Category",
+                                                "Create"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "CategoryUpdate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Update an existing category\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Update an existing category\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Category\/Update",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Category",
+                                                "Update"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "CategoryDelete",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Delete an existing category\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Delete an existing category\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Category\/Delete",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Category",
+                                                "Delete"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "fabric",
+                            "item": [
+                                {
+                                    "name": "fabricGet",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Get a single fabric by ID\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a single fabric by ID\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/fabric\/Get",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "fabric",
+                                                "Get"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "fabricList",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Get a list of all fabrics\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a list of all fabrics\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/fabric\/List",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "fabric",
+                                                "List"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "fabricCreate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Create a new fabric\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Create a new fabric\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/fabric\/Create",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "fabric",
+                                                "Create"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "fabricUpdate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Update an existing fabric\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Update an existing fabric\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/fabric\/Update",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "fabric",
+                                                "Update"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "fabricDelete",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Delete an existing fabric\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Delete an existing fabric\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/fabric\/Delete",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "fabric",
+                                                "Delete"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "pattern",
+                            "item": [
+                                {
+                                    "name": "AddPatternGet",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Get a single pattern by ID\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a single pattern by ID\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/pattern\/Get",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "pattern",
+                                                "Get"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "AddPatternList",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Get a list of all patterns\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a list of all patterns\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/pattern\/List",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "pattern",
+                                                "List"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "AddPatternCreate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Create a new pattern\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Create a new pattern\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/pattern\/Create",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "pattern",
+                                                "Create"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "AddPatternUpdate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Update an existing pattern\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Update an existing pattern\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/pattern\/Update",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "pattern",
+                                                "Update"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "AddPatternDelete",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Delete an existing pattern\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Delete an existing pattern\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/pattern\/Delete",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "pattern",
+                                                "Delete"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Product",
+                            "item": [
+                                {
+                                    "name": "productGet",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Get a single product by ID\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a single product by ID\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Product\/Get",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Product",
+                                                "Get"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "productList",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Get a list of all products\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a list of all products\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Product\/List",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Product",
+                                                "List"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "productCreate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Create a new product\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Create a new product\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Product\/Create",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Product",
+                                                "Create"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "productUpdate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Update an existing product\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Update an existing product\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Product\/Update",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Product",
+                                                "Update"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "productDelete",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Delete an existing product\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Delete an existing product\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Product\/Delete",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Product",
+                                                "Delete"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "ProductVariant",
+                            "item": [
+                                {
+                                    "name": "variantGet",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Get a single product variant by ID\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a single product variant by ID\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/ProductVariant\/Get",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "ProductVariant",
+                                                "Get"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "variantList",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "\/** \r\n     * Get a list of all product variants\r\n     * \r\n     * @return mixed\r\n     *\/\/ \r\n      Get a list of all product variants\r\n      \r\n      @return mixed\r\n     \/",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/ProductVariant\/List",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "ProductVariant",
+                                                "List"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "variantCreate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/ProductVariant\/Create",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "ProductVariant",
+                                                "Create"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "variantUpdate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/ProductVariant\/Update",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "ProductVariant",
+                                                "Update"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "variantDelete",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/ProductVariant\/Delete",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "ProductVariant",
+                                                "Delete"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "calculate_variant",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/ProductVariant\/calculate_variant",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "ProductVariant",
+                                                "calculate_variant"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Size",
+                            "item": [
+                                {
+                                    "name": "sizeGet",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Size\/Get",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Size",
+                                                "Get"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "sizeList",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Size\/List",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Size",
+                                                "List"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "sizeCreate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Size\/Create",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Size",
+                                                "Create"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "sizeUpdate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Size\/Update",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Size",
+                                                "Update"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "sizeDelete",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Size\/Delete",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Size",
+                                                "Delete"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Unit",
+                            "item": [
+                                {
+                                    "name": "unitGet",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Unit\/Get",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Unit",
+                                                "Get"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "unitList",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Unit\/List",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Unit",
+                                                "List"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "unitCreate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Unit\/Create",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Unit",
+                                                "Create"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "unitUpdate",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Unit\/Update",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Unit",
+                                                "Update"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "unitDelete",
+                                    "request": {
+                                        "method": "post",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{api_url}}adminApi\/Auth\/Unit\/Delete",
+                                            "host": [
+                                                "{{api_url}}"
+                                            ],
+                                            "path": [
+                                                "adminApi",
+                                                "Auth",
+                                                "Unit",
+                                                "Delete"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "FirebaseMessagingIntegrationCreateUpdate",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/**\r\n     *  {\"firebase_messaging_integration_id\":\"\",\"apiKey\":\"\",\"authDomain\":\"\",\"projectId\":\"\",\"storageBucket\":\"\",\"messagingSenderId\":\"\",\"appId\":\"\",\"serverKey\":\"\",\"vapidKey\":\"\",\"desktop_notification\":\"\",\"mobile_notification\":\"\"}\r\n     *\/\/\r\n       {\"firebase_messaging_integration_id\":\"\",\"apiKey\":\"\",\"authDomain\":\"\",\"projectId\":\"\",\"storageBucket\":\"\",\"messagingSenderId\":\"\",\"appId\":\"\",\"serverKey\":\"\",\"vapidKey\":\"\",\"desktop_notification\":\"\",\"mobile_notification\":\"\"}\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/Auth\/FirebaseMessagingIntegrationCreateUpdate",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "Auth",
+                                        "FirebaseMessagingIntegrationCreateUpdate"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "SendNotification",
+                            "request": {
+                                "method": "post",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "\/**\r\n     *  {\"tokens\":[],\"title\":\"required\",\"body\":\"required\",\"image\":\"permit_empty\",\"url\":\"required\"}\r\n     *\/\/\r\n       {\"tokens\":[],\"title\":\"required\",\"body\":\"required\",\"image\":\"permit_empty\",\"url\":\"required\"}\r\n     \/",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{api_url}}adminApi\/Auth\/SendNotification",
+                                    "host": [
+                                        "{{api_url}}"
+                                    ],
+                                    "path": [
+                                        "adminApi",
+                                        "Auth",
+                                        "SendNotification"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
