@@ -2,9 +2,9 @@
 
 namespace Tests\Support\Models;
 
-use CodeIgniter\Model;
+use App\Models\FunctionModel;
 
-class ExampleModel extends Model
+class ExampleModel extends FunctionModel
 {
     protected $table          = 'factories';
     protected $primaryKey     = 'id';
