@@ -39,7 +39,7 @@ class CreateUserTable extends Migration
             ],
             'user_type' => [
                 'type' => 'ENUM',
-                'constraint' => ['admin', 'purchase', 'finance', 'order', 'delivery', 'stock'],
+                'constraint' => ['admin', 'guest'],
             ],
             'is_active' => [
                 'type' => 'BOOLEAN',

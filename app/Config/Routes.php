@@ -65,7 +65,7 @@ if (!in_array($file_extension, $extensions)) {
     $routes->group('Auth', ['filter' => 'AdminAuthFilter'], function ($routes) {
         $routes->group('Dashboard', function ($routes) {
             $routes->get('/', 'AdminPageController::default_dashboard', ['as' => 'default_dashboard']);
-            // $routes->get('Admin', 'AdminPageController::admin_dashboard', ['as' => 'admin_dashboard']);
+            $routes->get('Admin', 'AdminPageController::admin_dashboard', ['as' => 'admin_dashboard']);
             // $routes->get('Purchase', 'AdminPageController::purchase_dashboard', ['as' => 'purchase_dashboard']);
             // $routes->get('Order', 'AdminPageController::order_dashboard', ['as' => 'order_dashboard']);
             // $routes->get('Financial', 'AdminPageController::finance_dashboard', ['as' => 'financial_dashboard']);

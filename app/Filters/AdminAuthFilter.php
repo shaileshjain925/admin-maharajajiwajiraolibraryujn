@@ -25,12 +25,12 @@ class AdminAuthFilter implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        $response = service('response');
-        $session = session();
-        $session_data = $session->get();
-        if (!isset($session_data['user_id']) || empty($session_data['user_id'])) {
-            return $response->redirect(route_to('admin_login_page'));
-        }
+        // $response = service('response');
+        // $session = session();
+        // $session_data = $session->get();
+        // if (!isset($session_data['user_id']) || empty($session_data['user_id'])) {
+        //     return $response->redirect(route_to('admin_login_page'));
+        // }
     }
 
     /**

@@ -11,11 +11,11 @@ class AdminPageController extends BaseController
     use CommonTraits;
     public function default_dashboard()
     {
-        switch ($_SESSION['user_type']) {
-            case UserType::Admin->value:
-                return $this->admin_dashboard();
-                break;
-        }
+        // switch ($_SESSION['user_type']) {
+        //     case UserType::Admin->value:
+        //         return $this->admin_dashboard();
+        //         break;
+        // }
         return $this->admin_dashboard();
     }
     public function admin_dashboard()
@@ -76,10 +76,10 @@ class AdminPageController extends BaseController
         $theme_data['_view_files'] = [];
 
         // Sidebar
-        $theme_data['_user_name'] = $_SESSION['fullname'];
+        $theme_data['_user_name'] = @$_SESSION['fullname'];
         $theme_data['_user_id'] = '1';
         $theme_data['_user_image_url'] = 'assets/images/users/avatar-2.jpg';
-        $theme_data['_role_name'] = ucfirst($_SESSION['user_type']);
+        $theme_data['_role_name'] = ucfirst(@$_SESSION['user_type']);
         $theme_data['_role_id'] = '1';
         $theme_data['_menus'] = $this->getSiteBarMenus();
         $theme_data['_FirebaseMessagingNotification'] = [];
@@ -98,7 +98,8 @@ class AdminPageController extends BaseController
                         "title" => "Admin Dashboard",
                         "url" => base_url(route_to('admin_dashboard')),
                         "badge_count" => 0,
-                        "visibility" => ($_SESSION['user_type'] == 'admin') ? true : false,
+                        // "visibility" => ($_SESSION['user_type'] == 'admin') ? true : false,
+                        "visibility" => true,
                     ],
                 ]
             ],
@@ -107,7 +108,8 @@ class AdminPageController extends BaseController
                 "module_title" => "Files.Admin",
                 "module_name" => "Administrator",
                 "module_icon" => "mdi mdi-account-supervisor-outline",
-                "visibility" => ($_SESSION['user_type'] == 'admin') ? true : false,
+                // "visibility" => ($_SESSION['user_type'] == 'admin') ? true : false,
+                "visibility" => true,
                 "menus" => [
                     [
                         "title" => "Users Role",

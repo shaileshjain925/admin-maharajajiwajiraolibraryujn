@@ -12,8 +12,8 @@
     <form id="form" method="POST" enctype="multipart/form-data" action="<?= @$ApiUrl ?>">
         <input type="hidden" name="user_id" id="user_id" value="<?= @$user_id ?>">
         <div class="mb-3">
-            <label class="form-label">Employee Name</label>
-            <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Employee Name" value="<?= @$fullname ?>">
+            <label class="form-label">User Name</label>
+            <input type="text" id="fullname" name="fullname" class="form-control" placeholder="User Name" value="<?= @$fullname ?>">
             <span class="error-message" id="error-fullname"></span>
         </div>
 
@@ -38,11 +38,7 @@
             <label class="form-label">User Role</label>
             <select name="user_type" id="user_type" placeholder="Select Role">
                 <option value="admin" <?= (isset($user_type) && !empty($user_type) && $user_type == "admin") ? "selected" : "" ?>> Admin</option>
-                <option value="purchase" <?= (isset($user_type) && !empty($user_type) && $user_type == "purchase") ? "selected" : "" ?>> Purchase</option>
-                <option value="finance" <?= (isset($user_type) && !empty($user_type) && $user_type == "finance") ? "selected" : "" ?>> Finance</option>
-                <option value="order" <?= (isset($user_type) && !empty($user_type) && $user_type == "order") ? "selected" : "" ?>> Order</option>
-                <option value="delivery" <?= (isset($user_type) && !empty($user_type) && $user_type == "delivery") ? "selected" : "" ?>> Delivery</option>
-                <option value="stock" <?= (isset($user_type) && !empty($user_type) && $user_type == "stock") ? "selected" : "" ?>> Stock</option>
+                <option value="guest" <?= (isset($user_type) && !empty($user_type) && $user_type == "guest") ? "selected" : "" ?>> Guest</option>
             </select>
             <span class="error-message" id="error-user_type"></span>
         </div>
