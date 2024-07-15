@@ -26,8 +26,8 @@
 
         <div class="mb-3">
             <label class="form-label">Address</label>
-            <textarea type="text" name="address" id="address" class="form-control" placeholder="Enter Address"><?= @$address ?></textarea>
-            <span class="error-message" id="error-address"></span>
+            <textarea type="text" name="student_residential_address" id="student_residential_address" class="form-control" placeholder="Enter Address"><?= @$student_residential_address ?></textarea>
+            <span class="error-message" id="error-student_residential_address"></span>
         </div>
         <div class="mb-3">
             <label class="form-label">Gender</label>

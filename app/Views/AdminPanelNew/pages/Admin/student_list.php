@@ -18,7 +18,7 @@
 </div>
 
 <!-- Add Student form offcanvas -->
-<div class="offcanvas offcanvas-end" tabindex="-1" id="RightSlideBox" aria-labelledby="RightSlideBoxLabel">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="RightSlideBox" aria-labelledby="RightSlideBoxLabel" style="width:500px !important">
 
 </div>
 <script>
@@ -55,9 +55,9 @@
                 $("#RightSlideBox").html(response);
                 $("#student_gender").selectize({});
                 $("#student_cast_category").selectize({});
-                initializeSelectize('course_id', {}, "<?= base_url(route_to('course_list_api')) ?>", {}, "course_id", "course_name", selected_course_id)
-                initializeSelectize('subject_id', {}, "<?= base_url(route_to('subject_list_api')) ?>", {}, "subject_id", "subject_name", selected_subject_id)
-                initializeSelectize('department_id', {}, "<?= base_url(route_to('department_list_api')) ?>", {}, "department_id", "department_name", selected_department_id)
+                initializeSelectize('course_id', {placeholder:"Select Course"}, "<?= base_url(route_to('course_list_api')) ?>", {}, "course_id", "course_name", selected_course_id)
+                initializeSelectize('subject_id', {placeholder:"Select Subject"}, "<?= base_url(route_to('subject_list_api')) ?>", {}, "subject_id", "subject_name", selected_subject_id)
+                initializeSelectize('department_id', {placeholder:"Select Department"}, "<?= base_url(route_to('department_list_api')) ?>", {}, "department_id", "department_name", selected_department_id)
             }
         });
     }
