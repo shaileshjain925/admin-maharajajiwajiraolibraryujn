@@ -52,6 +52,137 @@ class AdminPageController extends BaseController
         return view("AdminPanelNew/components/UserRoleCreateUpdate", $data);
     }
 
+    public function course_list()
+    {
+        $theme_data = $this->admin_panel_common_data();
+        $theme_data['_meta_title'] = 'Course';
+        $theme_data['_page_title'] = 'Course';
+        $theme_data['_breadcrumb1'] = 'Admin';
+        $theme_data['_breadcrumb2'] = 'Course';
+        $theme_data['_view_files'][] = 'AdminPanelNew/pages/Admin/course_list';
+        return view('AdminPanelNew/partials/main', $theme_data);
+    }
+
+    public function CourseCreateUpdateComponent($course_id = null)
+    {
+        $data = [];
+        if (!empty($course_id)) {
+            $course_data = $this->getCourseModel()->RecordGet($course_id);
+            $data = array_merge($course_data['data'], ['ApiUrl' => base_url(route_to('course_update_api'))]);
+        } else {
+            $data = array_merge(['ApiUrl' => base_url(route_to('course_create_api'))]);
+        }
+        return view("AdminPanelNew/components/CourseCreateUpdate", $data);
+    }
+
+    public function designation_list()
+    {
+        $theme_data = $this->admin_panel_common_data();
+        $theme_data['_meta_title'] = 'Designation';
+        $theme_data['_page_title'] = 'Designation';
+        $theme_data['_breadcrumb1'] = 'Admin';
+        $theme_data['_breadcrumb2'] = 'Designation';
+        $theme_data['_view_files'][] = 'AdminPanelNew/pages/Admin/designation_list';
+        return view('AdminPanelNew/partials/main', $theme_data);
+    }
+
+    public function DesignationCreateUpdateComponent($designation_id = null)
+    {
+        $data = [];
+        if (!empty($designation_id)) {
+            $designation_data = $this->getDesignationModel()->RecordGet($designation_id);
+            $data = array_merge($designation_data['data'], ['ApiUrl' => base_url(route_to('designation_update_api'))]);
+        } else {
+            $data = array_merge(['ApiUrl' => base_url(route_to('designation_create_api'))]);
+        }
+        return view("AdminPanelNew/components/DesignationCreateUpdate", $data);
+    }
+
+    public function subject_list()
+    {
+        $theme_data = $this->admin_panel_common_data();
+        $theme_data['_meta_title'] = 'Subject';
+        $theme_data['_page_title'] = 'Subject';
+        $theme_data['_breadcrumb1'] = 'Admin';
+        $theme_data['_breadcrumb2'] = 'Subject';
+        $theme_data['_view_files'][] = 'AdminPanelNew/pages/Admin/subject_list';
+        return view('AdminPanelNew/partials/main', $theme_data);
+    }
+
+    public function SubjectCreateUpdateComponent($subject_id = null)
+    {
+        $data = [];
+        if (!empty($subject_id)) {
+            $subject_data = $this->getSubjectModel()->RecordGet($subject_id);
+            $data = array_merge($subject_data['data'], ['ApiUrl' => base_url(route_to('subject_update_api'))]);
+        } else {
+            $data = array_merge(['ApiUrl' => base_url(route_to('subject_create_api'))]);
+        }
+        return view("AdminPanelNew/components/SubjectCreateUpdate", $data);
+    }
+    public function department_list()
+    {
+        $theme_data = $this->admin_panel_common_data();
+        $theme_data['_meta_title'] = 'Department';
+        $theme_data['_page_title'] = 'Department';
+        $theme_data['_breadcrumb1'] = 'Admin';
+        $theme_data['_breadcrumb2'] = 'Department';
+        $theme_data['_view_files'][] = 'AdminPanelNew/pages/Admin/department_list';
+        return view('AdminPanelNew/partials/main', $theme_data);
+    }
+    public function DepartmentCreateUpdateComponent($department_id = null)
+    {
+        $data = [];
+        if (!empty($department_id)) {
+            $department_data = $this->getDepartmentModel()->RecordGet($department_id);
+            $data = array_merge($department_data['data'], ['ApiUrl' => base_url(route_to('department_update_api'))]);
+        } else {
+            $data = array_merge(['ApiUrl' => base_url(route_to('department_create_api'))]);
+        }
+        return view("AdminPanelNew/components/DepartmentCreateUpdate", $data);
+    }
+    public function faculty_list()
+    {
+        $theme_data = $this->admin_panel_common_data();
+        $theme_data['_meta_title'] = 'Faculty';
+        $theme_data['_page_title'] = 'Faculty';
+        $theme_data['_breadcrumb1'] = 'Admin';
+        $theme_data['_breadcrumb2'] = 'Faculty';
+        $theme_data['_view_files'][] = 'AdminPanelNew/pages/Admin/faculty_list';
+        return view('AdminPanelNew/partials/main', $theme_data);
+    }
+    public function FacultyCreateUpdateComponent($faculty_id = null)
+    {
+        $data = [];
+        if (!empty($faculty_id)) {
+            $faculty_data = $this->getFacultyModel()->RecordGet($faculty_id);
+            $data = array_merge($faculty_data['data'], ['ApiUrl' => base_url(route_to('faculty_update_api'))]);
+        } else {
+            $data = array_merge(['ApiUrl' => base_url(route_to('faculty_create_api'))]);
+        }
+        return view("AdminPanelNew/components/FacultyCreateUpdate", $data);
+    }
+    public function student_list()
+    {
+        $theme_data = $this->admin_panel_common_data();
+        $theme_data['_meta_title'] = 'Student';
+        $theme_data['_page_title'] = 'Student';
+        $theme_data['_breadcrumb1'] = 'Admin';
+        $theme_data['_breadcrumb2'] = 'Student';
+        $theme_data['_view_files'][] = 'AdminPanelNew/pages/Admin/student_list';
+        return view('AdminPanelNew/partials/main', $theme_data);
+    }
+    public function StudentCreateUpdateComponent($student_id = null)
+    {
+        $data = [];
+        if (!empty($student_id)) {
+            $student_data = $this->getStudentModel()->RecordGet($student_id);
+            $data = array_merge($student_data['data'], ['ApiUrl' => base_url(route_to('student_update_api'))]);
+        } else {
+            $data = array_merge(['ApiUrl' => base_url(route_to('student_create_api'))]);
+        }
+        return view("AdminPanelNew/components/StudentCreateUpdate", $data);
+    }
     protected function admin_panel_common_data(): array
     {
         $theme_data = [];
@@ -114,6 +245,42 @@ class AdminPageController extends BaseController
                     [
                         "title" => "Users Role",
                         "url" => base_url(route_to('role_user_list')),
+                        "badge_count" => 0,
+                        "visibility" => true,
+                    ],
+                    [
+                        "title" => "Designation",
+                        "url" => base_url(route_to('designation_list')),
+                        "badge_count" => 0,
+                        "visibility" => true,
+                    ],
+                    [
+                        "title" => "Course",
+                        "url" => base_url(route_to('course_list')),
+                        "badge_count" => 0,
+                        "visibility" => true,
+                    ],
+                    [
+                        "title" => "Subject",
+                        "url" => base_url(route_to('subject_list')),
+                        "badge_count" => 0,
+                        "visibility" => true,
+                    ],
+                    [
+                        "title" => "Department",
+                        "url" => base_url(route_to('department_list')),
+                        "badge_count" => 0,
+                        "visibility" => true,
+                    ],
+                    [
+                        "title" => "Faculty",
+                        "url" => base_url(route_to('faculty_list')),
+                        "badge_count" => 0,
+                        "visibility" => true,
+                    ],
+                    [
+                        "title" => "Student",
+                        "url" => base_url(route_to('student_list')),
                         "badge_count" => 0,
                         "visibility" => true,
                     ],

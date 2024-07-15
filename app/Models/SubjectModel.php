@@ -7,12 +7,12 @@ use App\Models\FunctionModel;
 class SubjectModel extends FunctionModel
 {
     protected $table            = 'subject';
-    protected $primaryKey       = 'subject_code';
+    protected $primaryKey       = 'subject_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['subject_code', 'subject_name'];
+    protected $allowedFields    = ['subject_id', 'subject_code', 'subject_name'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -29,7 +29,8 @@ class SubjectModel extends FunctionModel
 
     // Validation
     protected $validationRules      = [
-        'subject_code' => 'required',
+        'subject_id' => 'permit_empty',
+        'subject_code' => 'required|is_unique[subject.subject_code,subject_id,{subject_id}]',
         'subject_name' => 'required',
     ];
     protected $validationMessages   = [];

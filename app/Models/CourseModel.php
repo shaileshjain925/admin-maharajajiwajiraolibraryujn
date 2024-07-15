@@ -7,12 +7,12 @@ use App\Models\FunctionModel;
 class CourseModel extends FunctionModel
 {
     protected $table            = 'course';
-    protected $primaryKey       = 'course_code';
+    protected $primaryKey       = 'course_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['course_code', 'course_name'];
+    protected $allowedFields    = ['course_id', 'course_code', 'course_name'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -29,7 +29,8 @@ class CourseModel extends FunctionModel
 
     // Validation
     protected $validationRules      = [
-        'course_code' => 'required',
+        'course_id' => 'permit_empty',
+        'course_code' => 'required|is_unique[course.course_code,course_id,{course_id}]',
         'course_name' => 'required',
     ];
     protected $validationMessages   = [];

@@ -15,23 +15,26 @@ class CourseSubjectDepartment extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'course_code' => [
-                'TYPE' => 'VARCHAR',
-                'constraint' =>  255
+            'course_id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
             ],
-            'subject_code' => [
-                'TYPE' => 'VARCHAR',
-                'constraint' =>  255
+            'subject_id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
             ],
-            'department_code' => [
-                'TYPE' => 'VARCHAR',
-                'constraint' =>  255
+            'department_id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
             ],
         ]);
         $this->forge->addPrimaryKey('course_subject_department_id');
-        $this->forge->addForeignKey('course_code', 'course', 'course_code', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('subject_code', 'subject', 'subject_code', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('department_code', 'department', 'department_code', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('course_id', 'course', 'course_id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('subject_id', 'subject', 'subject_id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('department_id', 'department', 'department_id', 'CASCADE', 'CASCADE');
         $this->forge->createTable('course_subject_department', true);
     }
 

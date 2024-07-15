@@ -15,23 +15,25 @@ class CourseSubject extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'course_code' => [
-                'TYPE' => 'VARCHAR',
-                'constraint' =>  255
+            'course_id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
             ],
-            'subject_code' => [
-                'TYPE' => 'VARCHAR',
-                'constraint' =>  255
+            'subject_id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
             ],
         ]);
         $this->forge->addPrimaryKey('course_subject_id');
-        $this->forge->addForeignKey('course_code','course','course_code','CASCADE','CASCADE');
-        $this->forge->addForeignKey('subject_code','subject','subject_code','CASCADE','CASCADE');
-        $this->forge->createTable('course_subject',true);
+        $this->forge->addForeignKey('course_id', 'course', 'course_id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('subject_id', 'subject', 'subject_id', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('course_subject', true);
     }
 
     public function down()
     {
-        $this->forge->dropTable('course_subject',true);
+        $this->forge->dropTable('course_subject', true);
     }
 }

@@ -7,12 +7,12 @@ use App\Models\FunctionModel;
 class CourseSubjectDepartmentModel extends FunctionModel
 {
     protected $table            = 'course_subject_department';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'course_subject_department_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['course_subject_department_id', 'course_id', 'subject_id', 'department_id'];
+    protected $allowedFields    = ['course_subject_department_id','course_subject_department_id', 'course_id', 'subject_id', 'department_id'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

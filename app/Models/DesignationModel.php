@@ -29,7 +29,7 @@ class DesignationModel extends FunctionModel
 
     // Validation
     protected $validationRules = [
-        'designation_id' => 'required',
+        'designation_id' => 'permit_empty',
         'designation_name' => 'required|is_unique[designation.designation_name,designation_id,{designation_id}]',
     ];
 

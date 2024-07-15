@@ -50,9 +50,10 @@ class Faculty extends Migration
                 'constraint' => 255,
                 'null' => true,
             ],
-            'department_code' => [
-                'type' => 'VARCHAR',
-                'constraint' => 36,
+            'department_id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
                 'null' => false,
             ],
             'designation_id' => [
@@ -70,8 +71,8 @@ class Faculty extends Migration
         ]);
 
         $this->forge->addPrimaryKey('faculty_id');
-        $this->forge->addForeignKey('department_code', 'department', 'department_code', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('designation_id', 'designation', 'designation_id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('department_id', 'department', 'department_id', 'RESTRICT', 'RESTRICT');
+        $this->forge->addForeignKey('designation_id', 'designation', 'designation_id', 'RESTRICT', 'RESTRICT');
         $this->forge->createTable('faculty', true);
     }
 

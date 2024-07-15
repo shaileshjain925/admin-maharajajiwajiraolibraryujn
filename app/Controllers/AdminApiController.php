@@ -535,7 +535,7 @@ class AdminApiController extends BaseController
         return $this->ModelList($this->getUserModel());
     }
     /** 
-     * {"user_id": "permit_empty|integer",	"fullname": "required|max_length[255]",	"email": "required|valid_email|max_length[255]|is_unique[user.email,user_id,{user_id}]",	"mobile": "required|max_length[15]|is_unique[user.mobile,user_id,{user_id}]",	"password": "required|max_length[255]",	"otp": "permit_empty|max_length[6]",	"user_type": "required|in_list[admin,guest]",	"is_active": "boolean"} 
+     * 
      */
     public function UserCreate()
     {
@@ -551,6 +551,185 @@ class AdminApiController extends BaseController
     {
         return $this->ModelDelete($this->getUserModel());
     }
+
+    // Designation --------------------------------------------------------------
+
+    public function DesignationGet()
+    {
+        return $this->ModelGet($this->getDesignationModel());
+    }
+    /** */
+    public function DesignationList()
+    {
+        return $this->ModelList($this->getDesignationModel());
+    }
+    /** 
+     * 
+     */
+    public function DesignationCreate()
+    {
+        return $this->ModelCreate($this->getDesignationModel());
+    }
+    /** */
+    public function DesignationUpdate()
+    {
+        return $this->ModelUpdate($this->getDesignationModel());
+    }
+    /** */
+    public function DesignationDelete()
+    {
+        return $this->ModelDelete($this->getDesignationModel());
+    }
+
+    // Course --------------------------------------------------------------
+
+    public function CourseGet()
+    {
+        return $this->ModelGet($this->getCourseModel());
+    }
+    /** */
+    public function CourseList()
+    {
+        return $this->ModelList($this->getCourseModel());
+    }
+    /** 
+     * 
+     */
+    public function CourseCreate()
+    {
+        return $this->ModelCreate($this->getCourseModel());
+    }
+    /** */
+    public function CourseUpdate()
+    {
+        return $this->ModelUpdate($this->getCourseModel());
+    }
+    /** */
+    public function CourseDelete()
+    {
+        return $this->ModelDelete($this->getCourseModel());
+    }
+
+    // Subject --------------------------------------------------------------
+
+    public function SubjectGet()
+    {
+        return $this->ModelGet($this->getSubjectModel());
+    }
+    /** */
+    public function SubjectList()
+    {
+        return $this->ModelList($this->getSubjectModel());
+    }
+    /** 
+     * 
+     */
+    public function SubjectCreate()
+    {
+        return $this->ModelCreate($this->getSubjectModel());
+    }
+    /** */
+    public function SubjectUpdate()
+    {
+        return $this->ModelUpdate($this->getSubjectModel());
+    }
+    /** */
+    public function SubjectDelete()
+    {
+        return $this->ModelDelete($this->getSubjectModel());
+    }
+
+
+    // Department --------------------------------------------------------------
+
+    public function DepartmentGet()
+    {
+        return $this->ModelGet($this->getDepartmentModel());
+    }
+    /** */
+    public function DepartmentList()
+    {
+        return $this->ModelList($this->getDepartmentModel());
+    }
+    /** 
+     * 
+     */
+    public function DepartmentCreate()
+    {
+        return $this->ModelCreate($this->getDepartmentModel());
+    }
+    /** */
+    public function DepartmentUpdate()
+    {
+        return $this->ModelUpdate($this->getDepartmentModel());
+    }
+    /** */
+    public function DepartmentDelete()
+    {
+        return $this->ModelDelete($this->getDepartmentModel());
+    }
+
+
+    // Faculty --------------------------------------------------------------
+
+    public function FacultyGet()
+    {
+        return $this->ModelGet($this->getFacultyModel());
+    }
+    /** */
+    public function FacultyList()
+    {
+        return $this->ModelList($this->getFacultyModel());
+    }
+    /** 
+     * 
+     */
+    public function FacultyCreate()
+    {
+        return $this->ModelCreate($this->getFacultyModel());
+    }
+    /** */
+    public function FacultyUpdate()
+    {
+        return $this->ModelUpdate($this->getFacultyModel());
+    }
+    /** */
+    public function FacultyDelete()
+    {
+        return $this->ModelDelete($this->getFacultyModel());
+    }
+
+    // Student --------------------------------------------------------------
+
+    public function StudentGet()
+    {
+        return $this->ModelGet($this->getStudentModel());
+    }
+    /** */
+    public function StudentList()
+    {
+        return $this->ModelList($this->getStudentModel());
+    }
+    /** 
+     * 
+     */
+    public function StudentCreate()
+    {
+        return $this->ModelCreate($this->getStudentModel());
+    }
+    /** */
+    public function StudentUpdate()
+    {
+        return $this->ModelUpdate($this->getStudentModel());
+    }
+    /** */
+    public function StudentDelete()
+    {
+        return $this->ModelDelete($this->getStudentModel());
+    }
+
+
+
     protected function FileTypeValidate($fileObject, $allowedFileTypeArray): bool
     {
         $fileType = $fileObject['type'];
@@ -572,7 +751,7 @@ class AdminApiController extends BaseController
         // Define validation rules for 'username', 'password', 'confirm-password', 'otp'
         $validation->setRules([
             'file' => "required",
-            'for' => "in_list[category_type,category,brand,product,variant,color,feature,blogpost,firmLogo]",
+            'for' => "in_list[faculty,student]",
         ]);
         if ($validation->run($requestedData) === false) {
             // Return validation failed response
@@ -587,32 +766,11 @@ class AdminApiController extends BaseController
         }
         $folderPath = "";
         switch ($requestedData['for']) {
-            case 'category_type':
-                $folderPath .= "uploads/category_type/";
+            case 'faculty':
+                $folderPath .= "uploads/faculty/";
                 break;
-            case 'category':
-                $folderPath .= "uploads/category/";
-                break;
-            case 'brand':
-                $folderPath .= "uploads/brand/";
-                break;
-            case 'product':
-                $folderPath .= "uploads/product/";
-                break;
-            case 'variant':
-                $folderPath .= "uploads/variant/";
-                break;
-            case 'color':
-                $folderPath .= "uploads/color/";
-                break;
-            case 'feature':
-                $folderPath .= "uploads/feature/";
-                break;
-            case 'blogpost':
-                $folderPath .= "uploads/blogpost/";
-                break;
-            case 'firmLogo':
-                $folderPath .= "uploads/firmLogo/";
+            case 'student':
+                $folderPath .= "uploads/student/";
                 break;
         }
         $errorMessage = "";

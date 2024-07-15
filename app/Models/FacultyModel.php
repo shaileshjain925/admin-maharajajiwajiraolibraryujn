@@ -21,7 +21,7 @@ class FacultyModel extends FunctionModel
         'university_id',
         'faculty_mobile',
         'faculty_email',
-        'department_code',
+        'department_id',
         'designation_id',
         'is_active'
     ];
@@ -48,7 +48,7 @@ class FacultyModel extends FunctionModel
         'university_id' => 'permit_empty|max_length[255]',
         'faculty_mobile' => 'permit_empty|max_length[15]',
         'faculty_email' => 'permit_empty|valid_email|max_length[255]',
-        'department_code' => 'required|is_not_unique[department.department_code]',
+        'department_id' => 'required|is_not_unique[department.department_id]',
         'designation_id' => 'required|is_not_unique[designation.designation_id]',
         'is_active' => 'required|in_list[0,1]'
     ];
@@ -66,4 +66,11 @@ class FacultyModel extends FunctionModel
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->addParentJoin('department_id',$this->getDepartmentModel(),'left',['department_name','department_code']);
+        $this->addParentJoin('designation_id',$this->getDesignationModel(),'left',['designation_name']);
+    }
 }

@@ -66,16 +66,42 @@ if (!in_array($file_extension, $extensions)) {
         $routes->group('Dashboard', function ($routes) {
             $routes->get('/', 'AdminPageController::default_dashboard', ['as' => 'default_dashboard']);
             $routes->get('Admin', 'AdminPageController::admin_dashboard', ['as' => 'admin_dashboard']);
-            // $routes->get('Purchase', 'AdminPageController::purchase_dashboard', ['as' => 'purchase_dashboard']);
-            // $routes->get('Order', 'AdminPageController::order_dashboard', ['as' => 'order_dashboard']);
-            // $routes->get('Financial', 'AdminPageController::finance_dashboard', ['as' => 'financial_dashboard']);
-            // $routes->get('Delivery', 'AdminPageController::delivery_dashboard', ['as' => 'delivery_dashboard']);
-            // $routes->get('Stock', 'AdminPageController::stock_dashboard', ['as' => 'stock_dashboard']);
         });
         $routes->group('Admin', function ($routes) {
+            // User
             $routes->get('RoleUserList', 'AdminPageController::role_user_list', ['as' => 'role_user_list']);
             $routes->get('UserRoleCreateUpdateComponent', 'AdminPageController::UserRoleCreateUpdateComponent', ['as' => 'UserRoleCreateUpdateComponent']);
             $routes->get('UserRoleCreateUpdateComponent/(:num)', 'AdminPageController::UserRoleCreateUpdateComponent/$1');
+
+            // Designation
+            $routes->get('DesignationList', 'AdminPageController::designation_list', ['as' => 'designation_list']);
+            $routes->get('DesignationCreateUpdateComponent', 'AdminPageController::DesignationCreateUpdateComponent', ['as' => 'DesignationCreateUpdateComponent']);
+            $routes->get('DesignationCreateUpdateComponent/(:num)', 'AdminPageController::DesignationCreateUpdateComponent/$1');
+
+            // Course
+            $routes->get('CourseList', 'AdminPageController::course_list', ['as' => 'course_list']);
+            $routes->get('CourseCreateUpdateComponent', 'AdminPageController::CourseCreateUpdateComponent', ['as' => 'CourseCreateUpdateComponent']);
+            $routes->get('CourseCreateUpdateComponent/(:num)', 'AdminPageController::CourseCreateUpdateComponent/$1');
+
+            // Subject
+            $routes->get('SubjectList', 'AdminPageController::subject_list', ['as' => 'subject_list']);
+            $routes->get('SubjectCreateUpdateComponent', 'AdminPageController::SubjectCreateUpdateComponent', ['as' => 'SubjectCreateUpdateComponent']);
+            $routes->get('SubjectCreateUpdateComponent/(:num)', 'AdminPageController::SubjectCreateUpdateComponent/$1');
+
+            // Department
+            $routes->get('DepartmentList', 'AdminPageController::department_list', ['as' => 'department_list']);
+            $routes->get('DepartmentCreateUpdateComponent', 'AdminPageController::DepartmentCreateUpdateComponent', ['as' => 'DepartmentCreateUpdateComponent']);
+            $routes->get('DepartmentCreateUpdateComponent/(:num)', 'AdminPageController::DepartmentCreateUpdateComponent/$1');
+
+            // Faculty
+            $routes->get('FacultyList', 'AdminPageController::faculty_list', ['as' => 'faculty_list']);
+            $routes->get('FacultyCreateUpdateComponent', 'AdminPageController::FacultyCreateUpdateComponent', ['as' => 'FacultyCreateUpdateComponent']);
+            $routes->get('FacultyCreateUpdateComponent/(:num)', 'AdminPageController::FacultyCreateUpdateComponent/$1');
+
+            // Student
+            $routes->get('StudentList', 'AdminPageController::student_list', ['as' => 'student_list']);
+            $routes->get('StudentCreateUpdateComponent', 'AdminPageController::StudentCreateUpdateComponent', ['as' => 'StudentCreateUpdateComponent']);
+            $routes->get('StudentCreateUpdateComponent/(:num)', 'AdminPageController::StudentCreateUpdateComponent/$1');
         });
     });
     // Admin Panel Api Start -----------------------------------------------------------------------------------------------------------
@@ -118,6 +144,60 @@ if (!in_array($file_extension, $extensions)) {
                 $routes->post('Update', 'AdminApiController::UserUpdate', ['as' => 'user_update_api']);
                 $routes->post('Delete', 'AdminApiController::UserDelete', ['as' => 'user_delete_api']);
             });
+            // Designation Routes
+            $routes->group('Designation', function ($routes) {
+                $routes->post('Get', 'AdminApiController::DesignationGet');
+                $routes->post('List', 'AdminApiController::DesignationList', ['as' => 'designation_list_api']);
+                $routes->post('Create', 'AdminApiController::DesignationCreate', ['as' => 'designation_create_api']);
+                $routes->post('Update', 'AdminApiController::DesignationUpdate', ['as' => 'designation_update_api']);
+                $routes->post('Delete', 'AdminApiController::DesignationDelete', ['as' => 'designation_delete_api']);
+            });
+
+            // Course Routes
+            $routes->group('Course', function ($routes) {
+                $routes->post('Get', 'AdminApiController::CourseGet');
+                $routes->post('List', 'AdminApiController::CourseList', ['as' => 'course_list_api']);
+                $routes->post('Create', 'AdminApiController::CourseCreate', ['as' => 'course_create_api']);
+                $routes->post('Update', 'AdminApiController::CourseUpdate', ['as' => 'course_update_api']);
+                $routes->post('Delete', 'AdminApiController::CourseDelete', ['as' => 'course_delete_api']);
+            });
+
+            // Subject Routes
+            $routes->group('Subject', function ($routes) {
+                $routes->post('Get', 'AdminApiController::SubjectGet');
+                $routes->post('List', 'AdminApiController::SubjectList', ['as' => 'subject_list_api']);
+                $routes->post('Create', 'AdminApiController::SubjectCreate', ['as' => 'subject_create_api']);
+                $routes->post('Update', 'AdminApiController::SubjectUpdate', ['as' => 'subject_update_api']);
+                $routes->post('Delete', 'AdminApiController::SubjectDelete', ['as' => 'subject_delete_api']);
+            });
+
+            // Department Routes
+            $routes->group('Department', function ($routes) {
+                $routes->post('Get', 'AdminApiController::DepartmentGet');
+                $routes->post('List', 'AdminApiController::DepartmentList', ['as' => 'department_list_api']);
+                $routes->post('Create', 'AdminApiController::DepartmentCreate', ['as' => 'department_create_api']);
+                $routes->post('Update', 'AdminApiController::DepartmentUpdate', ['as' => 'department_update_api']);
+                $routes->post('Delete', 'AdminApiController::DepartmentDelete', ['as' => 'department_delete_api']);
+            });
+
+            // Faculty Routes
+            $routes->group('Faculty', function ($routes) {
+                $routes->post('Get', 'AdminApiController::FacultyGet');
+                $routes->post('List', 'AdminApiController::FacultyList', ['as' => 'faculty_list_api']);
+                $routes->post('Create', 'AdminApiController::FacultyCreate', ['as' => 'faculty_create_api']);
+                $routes->post('Update', 'AdminApiController::FacultyUpdate', ['as' => 'faculty_update_api']);
+                $routes->post('Delete', 'AdminApiController::FacultyDelete', ['as' => 'faculty_delete_api']);
+            });
+
+            // Student Routes
+            $routes->group('Student', function ($routes) {
+                $routes->post('Get', 'AdminApiController::StudentGet');
+                $routes->post('List', 'AdminApiController::StudentList', ['as' => 'student_list_api']);
+                $routes->post('Create', 'AdminApiController::StudentCreate', ['as' => 'student_create_api']);
+                $routes->post('Update', 'AdminApiController::StudentUpdate', ['as' => 'student_update_api']);
+                $routes->post('Delete', 'AdminApiController::StudentDelete', ['as' => 'student_delete_api']);
+            });
+
             $routes->group('FileUpload', function ($routes) {
                 $routes->post('ImageUpload', 'AdminApiController::ImageUpload', ['as' => 'file_upload_image_api']);
             });

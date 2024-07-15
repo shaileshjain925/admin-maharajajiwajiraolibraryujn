@@ -7,12 +7,12 @@ use App\Models\FunctionModel;
 class DepartmentModel extends FunctionModel
 {
     protected $table            = 'department';
-    protected $primaryKey       = 'department_code';
+    protected $primaryKey       = 'department_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['department_code', 'department_name'];
+    protected $allowedFields    = ['department_id','department_code', 'department_name'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -29,7 +29,8 @@ class DepartmentModel extends FunctionModel
 
     // Validation
     protected $validationRules      = [
-        'department_code' => 'required',
+        'department_id' => 'permit_empty',
+        'department_code' => 'required|is_unique[department.department_code,department_id,{department_id}]',
         'department_name' => 'required',
     ];
     protected $validationMessages   = [];
